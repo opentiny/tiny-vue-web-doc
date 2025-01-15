@@ -19,7 +19,10 @@ const findAllpage = (packagesPath) => {
     });
   } else {
     const content = fs.readFileSync(packagesPath).toString("UTF-8");
-    let result = content.replace(/@opentiny\/vue/g, "@opentinyvue/vue");
+    let result = content
+      .replace(/@opentiny\/vue/g, "@opentinyvue/vue")
+      .replace(/@opentinyvue\/vue-repl/g, "@opentiny/vue-repl")
+      .replace(/@opentinyvue\/vue-vite-import/g, "@opentiny/vue-vite-import");
 
     fs.writeFileSync(packagesPath, result);
   }

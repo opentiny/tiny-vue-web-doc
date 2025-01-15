@@ -1,21 +1,5 @@
 import shell from "shelljs";
 
-const replacePkgList = [
-  "@opentiny/vue-common",
-  "@opentiny/vue",
-  "@opentiny/vue-design-saas",
-  "@opentiny/vue-design-aurora",
-  "@opentiny/vue-design-smb",
-  "@opentiny/vue-hooks",
-  "@opentiny/vue-directive",
-  "@opentiny/vue-icon",
-  "@opentiny/vue-icon-multicolor",
-  "@opentiny/vue-theme",
-  "@opentiny/vue-icon-saas",
-  "@opentiny/vue-theme-saas",
-  "@opentiny/vue-theme-mobile",
-];
-
 // 复制@opentiny/vue-docs包到本地
 shell.cp("-R", "node_modules/@opentiny/vue-docs", "sites");
 
@@ -23,6 +7,7 @@ shell.cp("-R", "node_modules/@opentiny/vue-docs", "sites");
 const pkg = JSON.parse(shell.cat("sites/package.json"));
 delete pkg.devDependencies["@opentiny-internal/unplugin-virtual-template"];
 delete pkg.devDependencies["@opentiny/vue-mobile"];
+pkg.scripts["build"] = "vite build --mode pages";
 shell.ShellString(JSON.stringify(pkg, null, 2)).to("sites/package.json");
 
 // 修改sites/vite.config.js
