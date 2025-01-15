@@ -47,7 +47,7 @@ jobs:
           cp ./sites/dist/assets/_commonjsHelpers*.js ./_site/assets
           cp ./_site/index.html ./_site/404.html
           sed -i 's/\/static/\/tiny-vue-web-doc\/static/' ./_site/static/js/design-common.js
-          sh ./sites/dist/cp-component-md.sh
+          sh ./sites/cp-component-md.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
