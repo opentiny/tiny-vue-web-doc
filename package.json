@@ -1,0 +1,21 @@
+{
+  "name": "tiny-vue-web-doc",
+  "version": "1.0.0",
+  "description": "website of TinyVue",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "pre": "node preSites.js"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "@opentiny/vue-docs": "^3.21.0",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "@types/shelljs": "^0.8.6",
+    "shelljs": "^0.8.4"
+  },
+  "license": "ISC"
+}
