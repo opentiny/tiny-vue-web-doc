@@ -1,12 +1,6 @@
 name: Auto Deploy Site
 
 on:
-  push:
-    branches: [dev]
-    paths:
-      - 'examples/sites/**'
-      - '!examples/sites/**/*.spec.ts'
-
   workflow_dispatch:
 
 permissions:
@@ -34,8 +28,12 @@ jobs:
           version: 9
       - name: Install deps
         run: pnpm i --no-frozen-lockfile
+      - name: Prepare site
+        run: pnpm pre
+      - name: Re Install deps
+        run: pnpm i --no-frozen-lockfile
       - name: Build site
-        run: export NODE_OPTIONS="--max-old-space-size=8192" && pnpm -F @opentiny/vue-docs build
+        run: export NODE_OPTIONS="--max-old-space-size=8192" && pnpm build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
