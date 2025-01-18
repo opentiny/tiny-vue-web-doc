@@ -12,7 +12,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@opentiny/vue-docs": "^3.21.0",
+    "@opentinyvue/vue-docs": "^3.21.0",
     "fs-extra": "^11.2.0",
     "@opentinyvue/vue-locale": "^3.21.0",
     "@opentinyvue/vue-input": "^3.21.0",

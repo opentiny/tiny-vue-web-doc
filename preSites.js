@@ -1,7 +1,7 @@
 import shell from "shelljs";
 
-// 复制@opentiny/vue-docs包到本地
-shell.cp("-R", "node_modules/@opentiny/vue-docs", "sites");
+// 复制@opentinyvue/vue-docs包到本地
+shell.cp("-R", "node_modules/@opentinyvue/vue-docs", "sites");
 
 // 删除一些不需要的依赖
 const pkg = JSON.parse(shell.cat("sites/package.json"));
