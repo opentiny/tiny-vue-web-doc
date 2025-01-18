@@ -17,6 +17,7 @@ const newConfigJs = configJs
   .split("\n")
   .filter((row) => !row.includes("virtualTemplatePlugin"))
   .filter((row) => !row.includes("getAlias"))
+  .filter((row) => !row.includes("@mobile-root"))
   .filter((row) => !row.includes("getOptimizeDeps"))
   .filter((row) => !row.includes("@opentiny/vue-renderless/types"))
   .filter((row) => !row.includes("@opentiny/vue-vite-import"))
