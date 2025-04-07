@@ -16,6 +16,8 @@
     "fs-extra": "^11.2.0",
     "@opentinyvue/vue-locale": "^3.22.0",
     "@opentinyvue/vue-input": "^3.22.0",
+    "@opentinyvue/utils": "^3.22.0",
+    "@opentinyvue/vue-hooks": "^3.22.0",
     "@opentinyvue/vue-renderless": "^3.22.0",
     "@opentinyvue/vue-flowchart": "^3.22.0",
     "@opentinyvue/vue-modal": "^3.22.0",

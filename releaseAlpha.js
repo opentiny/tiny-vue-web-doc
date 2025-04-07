@@ -21,6 +21,7 @@ const findAllpage = (packagesPath) => {
     const content = fs.readFileSync(packagesPath).toString("UTF-8");
     let result = content
       .replace(/@opentiny\/vue/g, "@opentinyvue/vue")
+      .replace(/@opentiny\/utils/g, "@opentinyvue/utils")
       .replace(/@opentinyvue\/vue-repl/g, "@opentiny/vue-repl")
       .replace(/@opentinyvue\/vue-vite-import/g, "@opentiny/vue-vite-import")
       .replace(/\/tiny-vue\//g, "/tiny-vue-web-doc/")
