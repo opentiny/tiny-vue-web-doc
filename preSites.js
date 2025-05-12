@@ -26,3 +26,14 @@ const newConfigJs = configJs
   .map((row) => (row.includes("dynamicImportPlugin()") ? row + "*/" : row));
 
 shell.ShellString(newConfigJs.join("\n")).to(file);
+
+// 修复该.env.pages文件
+const envFile = "sites/env/.env.pages";
+const envConfig = shell.cat(envFile);
+const newEnvConfig = envConfig.split("\n").map((row) => {
+  if (row.includes("/playground.html")) {
+    return row.replace("/playground.html", "/tiny-vue-web-doc/playground.html");
+  }
+});
+
+shell.ShellString(newEnvConfig.join("\n")).to(envFile);
