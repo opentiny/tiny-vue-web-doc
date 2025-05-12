@@ -32,7 +32,10 @@ const envFile = "sites/env/.env.pages";
 const envConfig = shell.cat(envFile);
 const newEnvConfig = envConfig.split("\n").map((row) => {
   if (row.includes("/playground.html")) {
-    return row.replace("/playground.html", "/tiny-vue-web-doc/playground.html");
+    return row.replace(
+      /VITE_PLAYGROUND_URL=(.+)playground.html/,
+      "VITE_PLAYGROUND_URL=/tiny-vue-web-doc/playground.html"
+    );
   }
   return row;
 });
