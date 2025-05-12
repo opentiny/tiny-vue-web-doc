@@ -34,6 +34,7 @@ const newEnvConfig = envConfig.split("\n").map((row) => {
   if (row.includes("/playground.html")) {
     return row.replace("/playground.html", "/tiny-vue-web-doc/playground.html");
   }
+  return row;
 });
 
 shell.ShellString(newEnvConfig.join("\n")).to(envFile);
