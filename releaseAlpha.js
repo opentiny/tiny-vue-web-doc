@@ -25,7 +25,8 @@ const findAllpage = (packagesPath) => {
       .replace(/@opentinyvue\/vue-repl/g, "@opentiny/vue-repl")
       .replace(/@opentinyvue\/vue-vite-import/g, "@opentiny/vue-vite-import")
       .replace(/\/tiny-vue\//g, "/tiny-vue-web-doc/")
-      .replace(/\.\/examples\/sites\//g, "./sites/");
+      .replace(/\.\/examples\/sites\//g, "./sites/")
+      .replace(/@opentinyvue\/vue-search-box/g, "@opentiny/vue-search-box");
 
     fs.writeFileSync(packagesPath, result);
   }
