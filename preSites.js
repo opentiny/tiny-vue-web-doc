@@ -17,6 +17,7 @@ const newConfigJs = configJs
   .split("\n")
   .filter((row) => !row.includes("virtualTemplatePlugin"))
   .filter((row) => !row.includes("getAlias"))
+  .filter((row) => !row.includes("fixIconSrcPlugins"))
   .filter((row) => !row.includes("@mobile-root"))
   .filter((row) => !row.includes("getOptimizeDeps"))
   .filter((row) => !row.includes("@opentiny/vue-renderless/types"))
@@ -34,7 +35,7 @@ const newEnvConfig = envConfig.split("\n").map((row) => {
   if (row.includes("/playground.html")) {
     return row.replace(
       /VITE_PLAYGROUND_URL=(.+)playground.html/,
-      "VITE_PLAYGROUND_URL=/tiny-vue-web-doc/playground.html"
+      "VITE_PLAYGROUND_URL=/tiny-vue-web-doc/playground.html",
     );
   }
   return row;
